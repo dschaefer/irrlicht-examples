@@ -1,0 +1,7 @@
+#Sun Oct 03 01:42:32 EDT 2010
+eclipse.preferences.version=1
+environment/project/com.android.toolchain.gcc.288299948/IRR_PROJECT/delimiter=;
+environment/project/com.android.toolchain.gcc.288299948/IRR_PROJECT/operation=append
+environment/project/com.android.toolchain.gcc.288299948/IRR_PROJECT/value=${workspace_loc\:/irrlicht-android}
+environment/project/com.android.toolchain.gcc.288299948/append=true
+environment/project/com.android.toolchain.gcc.288299948/appendContributed=true
