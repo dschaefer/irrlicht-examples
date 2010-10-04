@@ -1,7 +1,10 @@
-#Thu Sep 30 23:58:04 EDT 2010
+#Sun Oct 03 23:23:39 EDT 2010
 eclipse.preferences.version=1
-environment/project/com.android.toolchain.gcc.1344305963/PATH/delimiter=;
-environment/project/com.android.toolchain.gcc.1344305963/PATH/operation=replace
-environment/project/com.android.toolchain.gcc.1344305963/PATH/value=C\:\\cygwin\\bin;C\:\\Android\\android-ndk-r4b;C\:\\Eclipse\\Helios\\eclipse\\msys\\bin;C\:/Program Files (x86)/Java/jre6/bin/client;C\:/Program Files (x86)/Java/jre6/bin;C\:/Program Files (x86)/Java/jre6/lib/i386;C\:\\Program Files (x86)\\RSA SecurID Token Common;C\:\\Windows\\system32;C\:\\Windows;C\:\\Windows\\System32\\Wbem;C\:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C\:\\Program Files (x86)\\CMake 2.8\\bin;C\:\\Program Files (x86)\\QuickTime\\QTSystem\\;C\:\\Android\\android-ndk-mingw\\android-sdk-windows\\android-ndk-r4b;C\:\\Android\\android-ndk-mingw\\android-sdk-windows\\tools;C\:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\VC\\Bin\\amd64;C\:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\VC\\vcpackages;C\:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\Common7\\IDE;C\:\\Program Files\\Microsoft SDKs\\Windows\\v7.0\\Bin\\x64;C\:\\Program Files\\Microsoft SDKs\\Windows\\v7.0\\Bin;C\:\\Windows\\Microsoft.NET\\Framework64\\v3.5;C\:\\Windows\\Microsoft.NET\\Framework\\v3.5;C\:\\Windows\\Microsoft.NET\\Framework64\\v2.0.50727;C\:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727;C\:\\Program Files\\Microsoft SDKs\\Windows\\v7.0\\Setup;C\:\\Windows\\system32;C\:\\Windows;C\:\\Windows\\System32\\Wbem;C\:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C\:\\Program Files (x86)\\CMake 2.8\\bin;C\:\\Program Files (x86)\\QuickTime\\QTSystem\\;C\:\\Program Files (x86)\\Git\\cmd
+environment/project/com.android.toolchain.gcc.1344305963/CWD/delimiter=;
+environment/project/com.android.toolchain.gcc.1344305963/CWD/operation=remove
+environment/project/com.android.toolchain.gcc.1344305963/CWD/value=C\:/Eclipse/workspaces/irrlicht/irrlicht-examples/hello-gl2
+environment/project/com.android.toolchain.gcc.1344305963/PWD/delimiter=;
+environment/project/com.android.toolchain.gcc.1344305963/PWD/operation=remove
+environment/project/com.android.toolchain.gcc.1344305963/PWD/value=C\:/Eclipse/workspaces/irrlicht/irrlicht-examples/hello-gl2
 environment/project/com.android.toolchain.gcc.1344305963/append=true
 environment/project/com.android.toolchain.gcc.1344305963/appendContributed=true

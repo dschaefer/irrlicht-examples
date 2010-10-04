@@ -20,7 +20,7 @@
 					<folderInfo id="com.android.toolchain.gcc.288299948.1182670844" name="/" resourcePath="">
 						<toolChain id="com.android.toolchain.gcc.868041125" name="com.android.toolchain.gcc" superClass="com.android.toolchain.gcc">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.android.targetPlatform.958868224" name="Android Platform" osList="all" superClass="com.android.targetPlatform"/>
-							<builder id="com.android.builder.1959547228" incrementalBuildTarget="-c &quot;ndk-build TARGET_PLATFORM=android-8&quot;" keepEnvironmentInBuildfile="false" managedBuildOn="false" superClass="com.android.builder">
+							<builder cleanBuildTarget="-c &quot;ndk-build clean&quot;" id="com.android.builder.1959547228" incrementalBuildTarget="-c &quot;ndk-build V=1&quot;" keepEnvironmentInBuildfile="false" managedBuildOn="false" superClass="com.android.builder">
 								<outputEntries>
 									<entry flags="VALUE_WORKSPACE_PATH" kind="outputPath" name="libs"/>
 									<entry flags="VALUE_WORKSPACE_PATH" kind="outputPath" name="obj"/>
@@ -28,9 +28,17 @@
 							</builder>
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.602102668" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 							<tool id="com.android.tool.compiler.g++.1166662248" name="Android G++" superClass="com.android.tool.compiler.g++">
+								<option id="gnu.cpp.compiler.option.include.paths.638300819" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/irrlicht-android/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\Android\android-ndk-r4b-mingw\build\platforms\android-8\arch-arm\usr\include&quot;"/>
+								</option>
 								<inputType id="com.android.tool.compiler.g++.input.1541039112" superClass="com.android.tool.compiler.g++.input"/>
 							</tool>
 							<tool id="com.android.tool.compiler.c.1264733348" name="Android GCC" superClass="com.android.tool.compiler.c">
+								<option id="gnu.c.compiler.option.include.paths.2067453507" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/irrlicht-android/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\Android\android-ndk-r4b-mingw\build\platforms\android-8\arch-arm\usr\include&quot;"/>
+								</option>
 								<inputType id="com.android.tool.compiler.c.input.1434565851" superClass="com.android.tool.compiler.c.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.1781118809" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
@@ -41,6 +49,10 @@
 								</inputType>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.base.976147697" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
+								<option id="gnu.both.asm.option.include.paths.1536857356" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/irrlicht-android/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\Android\android-ndk-r4b-mingw\build\platforms\android-8\arch-arm\usr\include&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.762749872" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>

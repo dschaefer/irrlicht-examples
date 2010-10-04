@@ -3,6 +3,7 @@
 	<name>IrrHelloWorld</name>
 	<comment></comment>
 	<projects>
+		<project>irrlicht-android</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -31,7 +32,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>
-					<value>-c ndk-build clean</value>
+					<value>-c &quot;ndk-build clean&quot;</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.contents</key>
@@ -51,7 +52,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.fullBuildTarget</key>
-					<value>-c &quot;ndk-build TARGET_PLATFORM=android-8&quot;</value>
+					<value>-c &quot;ndk-build V=1&quot;</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.stopOnError</key>
