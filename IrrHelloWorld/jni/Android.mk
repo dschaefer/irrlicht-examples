@@ -18,7 +18,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE    := libIrrHelloWorld
 LOCAL_CFLAGS    := -I$(IRR_PROJECT)/include
-LOCAL_SRC_FILES := jni.cpp
+LOCAL_SRC_FILES := jni.cpp ArchiveLoader.cpp
 LOCAL_LDLIBS    := -L$(IRR_PROJECT)/cmake/android -lirrlicht -llog -lGLESv2
 
 include $(BUILD_SHARED_LIBRARY)

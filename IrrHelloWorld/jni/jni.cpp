@@ -1,6 +1,9 @@
 #include <irrlicht.h>
 #include <jni.h>
 #include <android/log.h>
+#include "ArchiveLoader.h"
+
+#define LOGTAG "IrrHelloWorld"
 
 using namespace irr;
 
@@ -10,22 +13,40 @@ using namespace video;
 using namespace io;
 using namespace gui;
 
+#define CHECKNULL(var) if (!var) { \
+	__android_log_print(ANDROID_LOG_ERROR, LOGTAG, #var " is NULL"); \
+	return; \
+}
+
 class GLNative {
 public:
 	GLNative(int width, int height) {
+		__android_log_print(ANDROID_LOG_INFO, LOGTAG, "Starting...");
 		device = createDevice(EDT_OGLES2, dimension2d<u32>(width, height), 16, false, false, false, 0);
+		CHECKNULL(device);
 
 		driver = device->getVideoDriver();
+		CHECKNULL(driver);
 		smgr = device->getSceneManager();
+		CHECKNULL(smgr);
 		guienv = device->getGUIEnvironment();
+		CHECKNULL(guienv);
+
+		IFileSystem * fileSystem = device->getFileSystem();
+		fileSystem->addArchiveLoader(new AndroidArchiveLoader());
+		fileSystem->addFileArchive("<android>");
 
 		guienv->addStaticText(L"Hello World!", rect<s32>(10, 10, 260, 22), true);
 
 		IAnimatedMesh * mesh = smgr->getMesh("sydney.md2");
+		CHECKNULL(mesh);
 		IAnimatedMeshSceneNode * node = smgr->addAnimatedMeshSceneNode(mesh);
+		CHECKNULL(node);
 		node->setMaterialFlag(EMF_LIGHTING, false);
 		node->setMD2Animation(EMAT_STAND);
-		node->setMaterialTexture(0, driver->getTexture("sydney.bmp"));
+		ITexture * texture = driver->getTexture("sydney.bmp");
+		CHECKNULL(texture);
+		node->setMaterialTexture(0, texture);
 
 		smgr->addCameraSceneNode(0, vector3df(0, 30, -40), vector3df(0, 5, 0));
 	}
