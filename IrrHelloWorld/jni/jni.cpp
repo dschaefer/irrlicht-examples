@@ -31,9 +31,14 @@ public:
 		CHECKNULL(smgr);
 		guienv = device->getGUIEnvironment();
 		CHECKNULL(guienv);
-
 		IFileSystem * fileSystem = device->getFileSystem();
-		fileSystem->addArchiveLoader(new AndroidArchiveLoader());
+		CHECKNULL(fileSystem);
+
+		// The android archive loader
+		IArchiveLoader * archiveLoader = new AndroidArchiveLoader();
+		fileSystem->addArchiveLoader(archiveLoader);
+		archiveLoader->drop();
+
 		fileSystem->addFileArchive("<android>");
 
 		guienv->addStaticText(L"Hello World!", rect<s32>(10, 10, 260, 22), true);
