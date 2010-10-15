@@ -3,7 +3,6 @@
 	<name>IrrHelloWorld</name>
 	<comment></comment>
 	<projects>
-		<project>irrlicht-android</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -28,11 +27,11 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.buildCommand</key>
-					<value>sh</value>
+					<value>ndk-build.bat</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>
-					<value>-c &quot;ndk-build clean NDK_TOOLCHAIN=arm-2010q1&quot;</value>
+					<value>clean NDK_TOOLCHAIN=arm-2010q1</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.contents</key>
@@ -52,7 +51,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.fullBuildTarget</key>
-					<value>-c &quot;ndk-build V=1 NDK_TOOLCHAIN=arm-2010q1&quot;</value>
+					<value>V=1 NDK_TOOLCHAIN=arm-2010q1</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.stopOnError</key>
@@ -60,7 +59,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
-					<value>true</value>
+					<value>false</value>
 				</dictionary>
 			</arguments>
 		</buildCommand>

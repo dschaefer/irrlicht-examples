@@ -20,22 +20,18 @@ using namespace gui;
 
 class GLNative {
 public:
-	GLNative(int width, int height) {
+	GLNative(JNIEnv * env, int width, int height, jobject archiveHelper)
+	: mArchiveHelper(env, archiveHelper) {
 		__android_log_print(ANDROID_LOG_INFO, LOGTAG, "Starting...");
 		device = createDevice(EDT_OGLES2, dimension2d<u32>(width, height), 16, false, false, false, 0);
-		CHECKNULL(device);
 
 		driver = device->getVideoDriver();
-		CHECKNULL(driver);
 		smgr = device->getSceneManager();
-		CHECKNULL(smgr);
 		guienv = device->getGUIEnvironment();
-		CHECKNULL(guienv);
 		IFileSystem * fileSystem = device->getFileSystem();
-		CHECKNULL(fileSystem);
 
 		// The android archive loader
-		IArchiveLoader * archiveLoader = new AndroidArchiveLoader();
+		IArchiveLoader * archiveLoader = new AndroidArchiveLoader(mArchiveHelper);
 		fileSystem->addArchiveLoader(archiveLoader);
 		archiveLoader->drop();
 
@@ -74,11 +70,13 @@ private:
 	IVideoDriver * driver;
 	ISceneManager * smgr;
 	IGUIEnvironment * guienv;
+
+	ArchiveHelper mArchiveHelper;
 };
 
 extern "C"
-jint Java_doug_irrlicht_GLNative_init(JNIEnv * env, jclass cls, jint width, jint height) {
-	return (jint)new GLNative(width, height);
+jint Java_doug_irrlicht_GLNative_init(JNIEnv * env, jclass cls, jint width, jint height, jobject archiveHelper) {
+	return (jint)new GLNative(env, width, height, archiveHelper);
 }
 
 extern "C"

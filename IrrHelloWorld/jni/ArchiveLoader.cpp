@@ -13,8 +13,8 @@
 
 const char * AndroidArchiveLoader::archiveFileName = "<android>";
 
-AndroidArchiveLoader::AndroidArchiveLoader() {
-	archive = new AndroidFileArchive();
+AndroidArchiveLoader::AndroidArchiveLoader(ArchiveHelper & archiveHelper) {
+	archive = new AndroidFileArchive(archiveHelper);
 }
 
 AndroidArchiveLoader::~AndroidArchiveLoader() {

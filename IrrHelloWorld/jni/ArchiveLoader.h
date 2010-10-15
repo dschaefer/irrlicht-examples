@@ -9,13 +9,14 @@
 #define ARCHIVELOADER_H_
 
 #include <IFileArchive.h>
+#include "ArchiveHelper.h"
 
 using namespace irr;
 using namespace io;
 
 class AndroidArchiveLoader : public IArchiveLoader {
 public:
-	AndroidArchiveLoader();
+	AndroidArchiveLoader(ArchiveHelper & archiveHelper);
 	virtual ~AndroidArchiveLoader();
 
 	static const char * archiveFileName;

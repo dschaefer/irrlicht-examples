@@ -20,10 +20,11 @@ LOCAL_MODULE    := libIrrHelloWorld
 LOCAL_CFLAGS    := -I$(IRR_PROJECT)/include
 
 LOCAL_SRC_FILES := \
-	jni.cpp \
+	native.cpp \
 	ArchiveLoader.cpp \
 	FileArchive.cpp \
-	ReadFile.cpp
+	ReadFile.cpp \
+	ArchiveHelper.cpp
 
 LOCAL_LDLIBS    := -L$(IRR_PROJECT)/cmake/android -lirrlicht -llog -lGLESv2
 

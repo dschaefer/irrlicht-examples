@@ -6,23 +6,30 @@
  */
 
 #include "ReadFile.h"
+#include "ArchiveHelper.h"
+#include <android/log.h>
 
-AndroidReadFile::AndroidReadFile(const path & filename)
-: mfilename(filename)
-, pos(0) {
-	size = 0;
+AndroidReadFile::AndroidReadFile(ArchiveHelper & archiveHelper, const path & filename)
+: mArchiveHelper(archiveHelper)
+, mFilename(filename)
+, mPos(0) {
+	mSize = mArchiveHelper.getSize(filename);
+	mInputStream = mArchiveHelper.openFile(filename);
 }
 
 AndroidReadFile::~AndroidReadFile() {
+	mArchiveHelper.releaseFile(mInputStream);
 }
 
 s32 AndroidReadFile::read(void* buffer, u32 sizeToRead) {
-	pos += sizeToRead;
+	int n = mArchiveHelper.read(mInputStream, buffer, sizeToRead);
+	mPos += n;
+	return n;
 }
 
 bool AndroidReadFile::seek(long finalPos, bool relativeMovement) {
 	if (relativeMovement)
-		pos += finalPos;
+		mPos += finalPos;
 	else
-		pos = finalPos;
+		mPos = finalPos;
 }

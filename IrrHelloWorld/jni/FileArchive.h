@@ -13,14 +13,19 @@
 using namespace irr;
 using namespace io;
 
+class ArchiveHelper;
+
 class AndroidFileArchive : public IFileArchive {
 public:
-	AndroidFileArchive();
+	AndroidFileArchive(ArchiveHelper & archiveHelper);
 	virtual ~AndroidFileArchive();
 
 	virtual IReadFile* createAndOpenFile(const path& filename);
 	virtual IReadFile* createAndOpenFile(u32 index);
 	virtual const IFileList* getFileList() const;
+
+private:
+	ArchiveHelper & mArchiveHelper;
 };
 
 #endif /* FILEARCHIVE_H_ */

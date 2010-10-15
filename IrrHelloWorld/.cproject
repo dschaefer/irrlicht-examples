@@ -20,7 +20,7 @@
 					<folderInfo id="com.android.toolchain.gcc.288299948.1182670844" name="/" resourcePath="">
 						<toolChain id="com.android.toolchain.gcc.868041125" name="com.android.toolchain.gcc" superClass="com.android.toolchain.gcc">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.android.targetPlatform.958868224" name="Android Platform" osList="all" superClass="com.android.targetPlatform"/>
-							<builder cleanBuildTarget="-c &quot;ndk-build clean NDK_TOOLCHAIN=arm-2010q1&quot;" id="com.android.builder.1959547228" incrementalBuildTarget="-c &quot;ndk-build V=1 NDK_TOOLCHAIN=arm-2010q1&quot;" keepEnvironmentInBuildfile="false" managedBuildOn="false" superClass="com.android.builder">
+							<builder cleanBuildTarget="clean NDK_TOOLCHAIN=arm-2010q1" command="ndk-build.bat" id="com.android.builder.1959547228" incrementalBuildTarget="V=1 NDK_TOOLCHAIN=arm-2010q1" keepEnvironmentInBuildfile="false" managedBuildOn="false" superClass="com.android.builder">
 								<outputEntries>
 									<entry flags="VALUE_WORKSPACE_PATH" kind="outputPath" name="libs"/>
 									<entry flags="VALUE_WORKSPACE_PATH" kind="outputPath" name="obj"/>

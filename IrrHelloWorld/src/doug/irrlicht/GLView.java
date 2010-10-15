@@ -304,14 +304,14 @@ class GLView extends GLSurfaceView {
         private int[] mValue = new int[1];
     }
 
-    private static class Renderer implements GLSurfaceView.Renderer {
+    private class Renderer implements GLSurfaceView.Renderer {
     	private GLNative nat;
     	
         public void onSurfaceChanged(GL10 gl, int width, int height) {
         	if (nat != null)
         		nat.drop();
 
-        	nat = new GLNative(width, height);
+        	nat = new GLNative(width, height, getContext().getAssets());
         }
 
         public void onDrawFrame(GL10 gl) {

@@ -11,7 +11,8 @@
 
 #define LOGTAG "IrrArchive"
 
-AndroidFileArchive::AndroidFileArchive() {
+AndroidFileArchive::AndroidFileArchive(ArchiveHelper & archiveHelper)
+: mArchiveHelper(archiveHelper) {
 }
 
 AndroidFileArchive::~AndroidFileArchive() {
@@ -19,12 +20,12 @@ AndroidFileArchive::~AndroidFileArchive() {
 
 IReadFile * AndroidFileArchive::createAndOpenFile(const path& filename) {
 	__android_log_print(ANDROID_LOG_INFO, LOGTAG, "open file: %s", filename.c_str());
-	return new AndroidReadFile(filename);
+	return new AndroidReadFile(mArchiveHelper, filename);
 }
 
 IReadFile * AndroidFileArchive::createAndOpenFile(u32 index) {
 	__android_log_print(ANDROID_LOG_INFO, LOGTAG, "open file #%d", index);
-	return new AndroidReadFile("not sure");
+	return new AndroidReadFile(mArchiveHelper, "not sure");
 }
 
 const IFileList * AndroidFileArchive::getFileList() const {
